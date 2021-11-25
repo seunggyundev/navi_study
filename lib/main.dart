@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
+import 'subDetail.dart';
+import 'secondDetail.dart';
+import 'thirdPage.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  static const String _title = 'Widget Example';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SubPage Example',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-      ),
+      title: _title,
       initialRoute: '/', //처음 앱을 시작했을 때 보여줄 경로 지정
       //<String : Widget> 형태로 경로 선언 String은 경로로 사용 Widget은 경로가 가리키는 위
       routes: {
-        '/': (context) => FirstPage(),
-        '/second': (context) => SecondPage()
+        '/': (context) => SubDetail(),
+        '/second': (context) => SecondDetail(),
+        '/third' : (context) => ThirdDetail(),
       },
     );
   }
